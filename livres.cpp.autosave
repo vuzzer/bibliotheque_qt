@@ -1,0 +1,28 @@
+#include "livres.h"
+
+livres::livres(QWidget *parent) : QDialog(parent)
+{
+    QVBoxLayout *main = new QVBoxLayout();
+    QHBoxLayout *layout_button = new QHBoxLayout();
+
+    setMinimumSize(QSize(1000, 600));
+
+    //
+    m_valider=new QPushButton(tr("Valider"));
+    m_retour = new QPushButton(tr("Retour"));
+    m_formlayout = new QFormLayout();
+    m_matricule = new QLineEdit();
+
+    m_formlayout->addRow("Matricule : ", m_matricule);
+
+    layout_button->addWidget(m_retour);
+    layout_button->addWidget(m_valider);
+
+    main->addLayout(m_formlayout);
+    main->addLayout(layout_button);
+
+    setLayout(main);
+
+    connect(m_retour, SIGNAL(clicked()), this, SLOT(accept()));
+
+}

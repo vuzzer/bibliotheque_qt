@@ -1,0 +1,19 @@
+#ifndef LOGIN_H
+#define LOGIN_H
+
+
+#include <QtWidgets>
+
+class livres : public QDialog
+{
+public:
+    livres(QWidget *parent = nullptr);
+
+private:
+    QFormLayout *m_formlayout;
+    QLineEdit *m_matricule;
+    QPushButton *m_retour;
+    QPushButton *m_valider;
+};
+
+#endif // LOGIN_H
